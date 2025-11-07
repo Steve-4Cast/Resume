@@ -19,7 +19,7 @@ import {
 
 export default function Sidebar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [isDesktopOpen, setIsDesktopOpen] = useState(true);
+  const [isDesktopOpen, setIsDesktopOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const pathname = usePathname();
 
@@ -28,11 +28,17 @@ export default function Sidebar() {
     setIsMobileOpen(false);
   }, [pathname]);
 
-  // Load saved desktop drawer state from localStorage
+  // Load saved desktop drawer state from localStorage, default closed on mobile
   useEffect(() => {
-    const savedState = localStorage.getItem('sidebar-open');
-    if (savedState !== null) {
-      setIsDesktopOpen(savedState === 'true');
+    const isMobile = window.innerWidth < 1024;
+
+    if (isMobile) {
+      // Always start closed on mobile
+      setIsDesktopOpen(false);
+    } else {
+      // On desktop, check localStorage or default to true
+      const savedState = localStorage.getItem('sidebar-open');
+      setIsDesktopOpen(savedState !== null ? savedState === 'true' : true);
     }
   }, []);
 
@@ -173,7 +179,7 @@ export default function Sidebar() {
       <AnimatePresence mode="wait">
         {(isMobileOpen || isDesktopOpen) && (
           <motion.aside
-            className="fixed top-0 left-0 h-full bg-white border-r border-denim/10 z-40 lg:w-50 w-3/4 shadow-2xl"
+            className="fixed top-0 left-0 h-full bg-white border-r border-denim/10 z-40 w-64 lg:w-50 shadow-2xl"
             variants={sidebarVariants}
             initial="closed"
             animate="open"
