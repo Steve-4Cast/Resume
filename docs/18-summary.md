@@ -1,5 +1,5 @@
 ---
-title: "Summary: Following My Heart, Equipped with Tools"
+title: "Following My Heart, Equipped with Tools"
 ---
 
 From Building Houses to Building Software—and now building businesses—my story has always been one of growth and rising. I’ve followed my heart through both the good and the bad, collecting lessons and insights that have shaped the way I approach every challenge. My grandfather taught me to strive for perfection, reminding me that I don’t need to be the smartest person in the room—just smarter than the object I’m working with. That simple wisdom has guided me from hands-on craftsmanship to digital creation, where I’ve learned to zoom in on the smallest details without losing sight of the bigger picture. I believe that the right tools empower great work, and I’ve spent my life mastering and expanding mine—embracing technology, creativity, and curiosity to keep building what’s next.
